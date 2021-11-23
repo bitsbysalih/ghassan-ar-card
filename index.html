@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image.prod.js"></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image-aframe.prod.js"></script>
@@ -11,9 +9,8 @@
   </head>
   <body>
     <a-scene
-      mindar-image="imageTargetSrc: /assets/target.mind; autoStart: false; uiLoading: no; uiError: no; uiScanning: no;"
+      mindar-image="imageTargetSrc: /assets/targets.mind;"
       color-space="sRGB"
-      embedded
       renderer="colorManagement: true, physicallyCorrectLights"
       vr-mode-ui="enabled: false"
       device-orientation-permission-ui="enabled: false"
@@ -34,7 +31,11 @@
         <img id="linkedin" src="/assets/icons/linkedin.png" alt="linkedin" />
         <img id="phone" src="/assets/icons/phone.png" alt="phone" />
         <img id="deep_sea" src="/assets/images/deep_sea.png" alt="deep_sea" />
-        <!-- <img id="card_reference" src="/assets/images/card_reference.png" alt="" /> -->
+        <img
+          id="card_reference"
+          src="/assets/images/card_reference.png"
+          alt=""
+        />
       </a-assets>
 
       <a-camera
@@ -97,7 +98,7 @@
             material="opacity: 0.0"
           ></a-entity>
           <a-entity
-            text='value:${card.biography}; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/poppins/Poppins-SemiBold.json; line-height: 50; width:1.8; height: 0.8; wrapCount: 60; negate:"false";'
+            text='value:Founder of Beyin and Sailspad , he is an expert in digital design, architecture and Technology business development in the Augmented and Virtual Reality sectors.; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/poppins/Poppins-SemiBold.json; line-height: 50; width:1.8; height: 0.8; wrapCount: 60; negate:"false";'
             position="0.08 0.38 0.05"
             color="white"
           ></a-entity>
@@ -109,6 +110,45 @@
             geometry="primitive:plane; height: 0.1; width: 2;"
             material="opacity: 0.0"
           ></a-entity>
+
+          <a-entity>
+            <!-- Instagram -->
+            <a-image
+              class="clickable"
+              position="-0.66 -0.19 0.05"
+              src="#instagram"
+              height="0.2"
+              width="0.2"
+              animation="property: scale; to: 0.8 0.8 0.8;"
+            ></a-image>
+            <!-- LinkedIn -->
+            <a-image
+              class="clickable"
+              position="-0.26 -0.19 0.05"
+              src="#linkedin"
+              height="0.2"
+              width="0.2"
+              animation="property: scale; to: 0.8 0.8 0.8;"
+            ></a-image>
+            <!-- Phone -->
+            <a-image
+              class="clickable"
+              position="0.16 -0.19 0.05"
+              src="#phone"
+              height="0.2"
+              width="0.2"
+              animation="property: scale; to: 0.8 0.8 0.8;"
+            ></a-image>
+            <!-- Email -->
+            <a-image
+              class="clickable"
+              position="0.56 -0.19 0.05"
+              src="#email"
+              height="0.2"
+              width="0.2"
+              animation="property: scale; to: 0.8 0.8 0.8;"
+            ></a-image>
+          </a-entity>
         </a-entity>
       </a-entity>
     </a-scene>
