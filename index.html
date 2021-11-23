@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image.prod.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image-aframe.prod.js"></script>
+    <title>Ghassan Awad</title>
+  </head>
+  <body>
+    <a-scene
+      mindar-image="imageTargetSrc: /assets/target.mind; autoStart: false; uiLoading: no; uiError: no; uiScanning: no;"
+      color-space="sRGB"
+      embedded
+      renderer="colorManagement: true, physicallyCorrectLights"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: false"
+    >
+      <a-assets>
+        <img
+          id="profile"
+          className="profile-photo"
+          crossorigin="anonymous"
+          src="https://res.cloudinary.com/salihudev/image/upload/r_10/v1629503520/cli1oeilivynd2120nig.png"
+          alt="Ghassan Awad"
+        />
+
+        <img id="email" src="/assets/icons/email.png" alt="email" />
+        <img id="instagram" src="/assets/icons/instagram.png" alt="instagram" />
+        <img id="github" src="/assets/icons/github.png" alt="github" />
+        <img id="globe" src="/assets/icons/globe.png" alt="globe" />
+        <img id="linkedin" src="/assets/icons/linkedin.png" alt="linkedin" />
+        <img id="phone" src="/assets/icons/phone.png" alt="phone" />
+        <img id="deep_sea" src="/assets/images/deep_sea.png" alt="deep_sea" />
+        <!-- <img id="card_reference" src="/assets/images/card_reference.png" alt="" /> -->
+      </a-assets>
+
+      <a-camera
+        position="0 0 0"
+        look-controls="enabled: false"
+        cursor="fuse: false; rayOrigin: mouse;"
+        raycaster="far: 10000; objects: .clickable"
+      ></a-camera>
+
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-image
+          src="#profile"
+          position="-0.59 1.275 0.05"
+          height="0.79"
+          width="0.79"
+          scale="0.8 0.7 0.7"
+        ></a-image>
+        <a-image
+          rotation="0 0 0"
+          position="0.0 0.5 0"
+          scale="2.0 2.25 2.0"
+          src="#deep_sea"
+          material="opacity: 0.7;"
+        ></a-image>
+
+        <!-- <a-image
+          rotation="0 0 0"
+          position="0.0 0.5 0.02"
+          scale="2.0 2.25 2.0"
+          src="#card_reference"
+          material="opacity: 0.9; color: #464948"
+        ></a-image> -->
+
+        <a-entity>
+          <a-entity
+            text="value:Ghassan Awad; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/poppins/Poppins-SemiBold.json; width: 3.2;"
+            position="1.55 1.18 0.05"
+            width="1.5"
+            color="white"
+            material="opacity: 0.0"
+          ></a-entity>
+          <a-entity
+            text="value:Architect/Designer; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/poppins/Poppins-Regular.json;"
+            position="0.72 1.12 0.05"
+            height="auto"
+            width="1.5"
+            color="white"
+            geometry="primitive:plane; height: 0.1; width: 1.5;"
+            material="opacity: 0.0"
+          ></a-entity>
+        </a-entity>
+
+        <a-entity>
+          <a-entity
+            text="value:About; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/poppins/Poppins-SemiBold.json; width: 2.2;"
+            position="0.27 0.58 0.05"
+            height="auto"
+            color="#ffffff"
+            geometry="primitive:plane; height: 0.6; width: 2;"
+            material="opacity: 0.0"
+          ></a-entity>
+          <a-entity
+            text='value:${card.biography}; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/poppins/Poppins-SemiBold.json; line-height: 50; width:1.8; height: 0.8; wrapCount: 60; negate:"false";'
+            position="0.08 0.38 0.05"
+            color="white"
+          ></a-entity>
+          <a-entity
+            text="value:CONTACT INFO; color:#FFFFFF; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/poppins/Poppins-SemiBold.json; width: 2.2;"
+            position="0.27 -0.04 0.05"
+            height="auto"
+            color="white"
+            geometry="primitive:plane; height: 0.1; width: 2;"
+            material="opacity: 0.0"
+          ></a-entity>
+        </a-entity>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
